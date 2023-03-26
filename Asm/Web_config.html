@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innisfree</title>
+    <link rel="stylesheet" href="Trang_chu.css">
+    <link rel="stylesheet" href="Dang_nhap_dang_ky.css">
+    <link rel="stylesheet" href="Detail_san_pham.css">
+    <link rel="stylesheet" href="AddProduct.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+</head>
+
+<body ng-app="my_TrangChu">
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg mt-5 mb-5">
+                <div class="container-fluid">
+                    <a class="navbar-brand home" href="#" style="font-family: Times New Roman;
+                        font-size: 45px;
+                        color: #024137;">
+                    <b><i>innisfree</i></b></a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto ms-3 mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <div class="input-group">
+                                    <input type="text" size="35" class="form-control" placeholder="Phiên bản giới hạn mùa lễ hội" aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-default">
+                                    <span class="btn input-group-text bg-light" id="inputGroup-sizing-default">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <form class="d-flex" role="search">
+                            <label for="" class="me-5 mt-2"><a href="#Dang_nhap_dang_ky" class="nav-link"><b>Đăng nhập</b></a></label>
+                            <label for="" class="me-5 mt-2"><a href="#Doi_mat_khau" class="nav-link"><b>Đổi mật khẩu</b></a></label>
+                            <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+                            <button class="btn btn-outline-success" type="submit">
+                                <a href="#Gio_hang" class="nav-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-cart" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                    </svg>
+                                </a>
+                                <!-- <span class="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-danger">
+                                    99+
+                                    <span class="visually-hidden">unread messages</span> -->
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="row">
+            <nav class="navbar navbar-expand-lg mb-4">
+                <div class="container-fluid">
+                    <h5><a class="navbar-brand me-5" href="#Trang_chu" >Trang chủ</a></h5>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item ps-5 pe-5 mt-1">
+                                <h5><a class="nav-link" href="#San_pham">Sản phẩm</a></h5>
+                            </li>
+                            <li class="nav-item ps-5 pe-5 mt-1">
+                                <h5><a class="nav-link" href="#Gioi_thieu_cua_hang">Giới thiệu của hàng</a></h5>
+                            </li>
+                            <li class="nav-item ps-5 pe-5 mt-1">
+                                <h5><a class="nav-link" href="#Su_kiem">Sự kiện</a></h5>
+                            </li>
+                            <li class="nav-item ps-5 pe-5 mt-1">
+                                <h5><a class="nav-link" href="#addProduct">Add Product</a></h5>
+                            </li>
+                            <li class="nav-item ps-5 pe-5 mt-1">
+                                <h5><a class="nav-link" href="#addCategory">Add Category</a></h5>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div ng-view>
+            
+        </div>
+        
+    </div>
+
+    <!-- Footer -->
+    <div class="" style="background: #024137;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row text-light mb-4 mt-4">
+                        <h1><i>innisfree</i></h1>
+                    </div>
+                    <div class="row">
+                        <img src="img/image9.png" alt="" style="width: 215px; height: 65px;">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <img class="mt-5 mb-5 ms-4" src="img/image10.png" alt="" style="width: 210px; height: 98px;">
+                </div>
+            </div>
+            <div class="row">
+                
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-light">
+                          <li class="nav-item">
+                            <a class="nav-link text-light" href="#">Chính sách giao hàng và thanh toán  |</a>
+                          </li> 
+                          <li class="nav-item">
+                            <a class="nav-link text-light" href="#">Chính sách bảo mật thông tin khách hàng  |</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link text-light" href="#" >
+                                Chính sách mua hàng  |
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-light">Chính sách trả hàng</a>
+                          </li>
+                        </ul>
+                        
+                      </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="pb-2 mt-4 text-light">
+                <p>Thời gian làm việc: Thứ 2 ~ Thứ 6 9:00 ~ 17:00 (Trừ Thứ 7, Chủ Nhạt và ngày lễ)</p>
+                <p>Tư vấn và chăm sóc khách hàng: 028 3627 9777 (Ext: 125)</p>
+                <p>Email: cs_vn@innisfree.com</p>
+            </div>
+
+            <div class="pb-4 mt-4 text-light">
+                <p>CÔNG TY TNHH AMOREPACIFIC VIỆT NAM</p>
+                <p>Giấy CNĐKDN: 0309984165 - Ngầy cấp: 05/05/2010, được sửa đổi lần thứ 21, ngày 04/04/2022</p>
+                <p>Cơ quan cấp: Phòng Đăng kí kinh doan - Sở Kế hoạch và Đầu tư TP.HCM</p>
+                <p>Địa chỉ đăng kí kinh doanh: Lầu 4A, Tòa nhà Vincom, 72 Lê Thánh Tôn, Phường Bến Nghé, Quận 1, Tp. Hồ Chí Minh, Việt Nam.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="controller/Trang_chu.js"></script>
+    <script src="controller/San_pham.js"></script>
+    <script src="controller/Gioi_thieu_cua_hang.js"></script>
+    <script src="controller/Su_kiem.js"></script>
+    <script src="controller/Gio_hang.js"></script>
+    <script src="controller/Detail_san_pham.js"></script>
+    <script src="controller/Dang_nhap_dang_ky.js"></script>
+    <script src="controller/Dang_ky.js"></script>
+    <script src="controller/AddProduct.js"></script>
+    <script src="controller/AddCategory.js"></script>
+    <script src="controller/Doi_mat_khau.js"></script>
+
+    <script>
+        const app = angular.module("my_TrangChu", ["ngRoute"]);
+
+        app.controller('Trang_chu', Trang_chu);
+        app.controller('San_pham', San_pham);
+        app.controller('Gioi_thieu_cua_hang', Gioi_thieu_cua_hang);
+        app.controller('Su_kiem', Su_kiem);
+        app.controller("controllerGioHang", myGioHang)
+        app.controller("loginCtrl", dang_nhap);
+        app.controller("Dang_ky", Dang_ky);
+        app.controller("addProduct", addProduct);
+        app.controller("addCategory", addCategory);
+        app.controller("Doi_mat_khau", Doi_mat_khau);
+
+        app.config(function ($routeProvider, $locationProvider) {
+            $locationProvider.hashPrefix("");
+            $routeProvider
+            .when("/Trang_chu", {
+                templateUrl: "views/Trang_chu.html",
+                controller: "Trang_chu"
+            })
+            .when("/San_pham", {
+                templateUrl: "views/San_pham.html",
+                controller: "San_pham"
+            })
+            .when("/Gioi_thieu_cua_hang", {
+                templateUrl: "views/Gioi_thieu_cua_hang.html",
+                controller: "Gioi_thieu_cua_hang"
+            })
+            .when("/Su_kiem", {
+                templateUrl: "views/Su_kiem.html",
+                controller: "Su_kiem"
+            })
+            .when("/Gio_hang", {
+                templateUrl: "views/Gio_hang.html",
+                controller: "controllerGioHang"
+            })
+            .when("/addProduct", {
+                templateUrl: "views/AddProduct.html",
+                controller: "addProduct"
+            })
+            .when("/addCategory", {
+                templateUrl: "views/AddCategory.html",
+                controller: "addCategory"
+            })
+            .when("/Dang_nhap_dang_ky", {
+                templateUrl: "views/Dang_nhap_dang_ky.html",
+                controller: "loginCtrl"
+            })
+            .when("/Dang_ky", {
+                templateUrl: "views/Dang_ky.html",
+                controller: "Dang_ky"
+            })
+            .when("/Doi_mat_khau", {
+                templateUrl: "views/Doi_mat_khau.html",
+                controller: "Doi_mat_khau"
+            })
+            .when("/San_pham/:id", {
+                templateUrl: "views/Detail_san_pham.html",
+                controller: SinhVienDetailController,
+            })
+            .otherwise({
+                redirectTo: "/Dang_nhap_dang_ky",
+            });
+        });
+    </script>
+</body>
+
+</html>

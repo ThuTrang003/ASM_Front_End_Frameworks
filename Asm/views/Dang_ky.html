@@ -1,0 +1,60 @@
+<div ng-controller="Dang_ky" class="container ">
+    <div class="row">
+        <div class="col-6 offset-3 mt-3">
+            <form action="" name="dang_ky">
+
+                <h2>Đăng ký thành viên</h2>
+                <hr>
+                <div class="mt-5 mb-4">
+                    <label for="inp_phone" class="form-label" style="font-size: 20px; line-height: 35px;">Name</label>
+                    <div class="row mb-5 pb-2 ms-1 me-1">
+                        <input type="text" name="name" class="form-control" ng-model="user.userName" id="inp_phone" placeholder="Ví dụ: Ng Văn Tèo" required>
+                        <span class="text-danger" ng-show="dang_ky.name.$error.required && dang_ky.name.$touched">
+                            Tên đăng nhập không được để trống
+                        </span>
+                    </div>
+                </div>
+                <div class="mt-5 mb-4">
+                    <label for="inp_phone" class="form-label" style="font-size: 20px; line-height: 35px;">Email</label>
+                    <div class="row mb-5 pb-2 ms-1 me-1">
+                        <input type="email" name="email" class="form-control" ng-model="user.email" id="inp_phone" placeholder="Ví dụ: teonv@gmail.com" required>
+                        <span class="text-danger" ng-show="dang_ky.email.$error.required && dang_ky.email.$touched">
+                            Email không được để trống
+                        </span>
+                        <span class="text-danger" ng-show="dang_ky.email.$error.email && dang_ky.email.$touched">
+                            Email phải đúng định dạng
+                        </span>
+                    </div>
+                </div>
+                <div class="mt-5 mb-4">
+                    <label for="inp_phone" class="form-label" style="font-size: 20px; line-height: 35px;">Mật khẩu</label>
+                    <div class="row mb-5 pb-2 ms-1 me-1">
+                        <input type="text" name="passWord" class="form-control" ng-model="user.password" id="inp_phone" placeholder="Ví dụ: 123456" required>
+                        <span class="text-danger" ng-show="dang_ky.passWord.$error.required && dang_ky.passWord.$touched">
+                            Password không được để trống
+                        </span>
+                        <span class="text-danger" ng-model="err_pass">
+                            {{err_pass}}
+                        </span>
+                    </div>
+                </div>
+                <div class="mt-5 mb-4">
+                    <label for="inp_phone" class="form-label" style="font-size: 20px; line-height: 35px;">Số điện thoại</label>
+                    <div class="row mb-5 pb-2 ms-1 me-1">
+                        <input type="text" name="phone" class="form-control" ng-model="user.phone" id="inp_phone" placeholder="Ví dụ: 0912341234" required>
+                        <span class="text-danger" ng-show="dang_ky.phone.$error.required && dang_ky.phone.$touched">
+                            Số điện thoại không được để trống
+                        </span>
+                    </div>
+                </div>
+    
+    
+                <div class="col-md-3 offset-9 mb-5">
+                    <button class="btn btn-outline-success" ng-click="dangKy($event)">Đăng ký</button>
+                </div>
+            </form>
+            
+        </div>
+                
+    </div>
+</div>

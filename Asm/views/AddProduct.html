@@ -1,0 +1,124 @@
+<div ng-controller="addProduct" class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="container ms-5 me-5 from">
+                <form action="" name="add_product">
+                    <h3 class="text-center mt-5 ">Add Products</h3> <br>
+
+                    <div class="mb-5 mt-5 row">
+
+                        <div class="col-sm-5 offset-3">
+
+                            <!-- Tìm kiếm -->
+                            <select class="form-select" name="category" ng-model="selectCategory">
+                                <option ng-repeat="category in listCategory" ng-value="category.id"
+                                    value="{{category.id}}">
+                                    {{category.name}}
+                                </option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="mb-5 mt-5 row">
+                        <label for="inputProductName" class="col-sm-3 offset-1 col-form-label">Product Name</label>
+                        <div class="col-sm-5">
+                            <input type="text" ng-model="product.nameProduct" name="nameProduct" class="form-control"
+                                id="inputProductName" required>
+                            <span class="text-danger"
+                                ng-show="add_product.nameProduct.$error.required && add_product.nameProduct.$touched">
+                                Tên sản phẩm không được để trống
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-5 mt-5 row">
+                        <label for="inputPrice" class="col-sm-3 offset-1 col-form-label">Price</label>
+                        <div class="col-sm-5">
+                            <input type="number" name="price" class="form-control" ng-model="product.price"
+                                id="inputPrice" required>
+                            <span class="text-danger"
+                                ng-show="add_product.price.$error.required && add_product.price.$touched">
+                                Giá sản phẩm không được để trống
+                            </span>
+                            <span class="text-danger"
+                                ng-show="add_product.price.$error.number && add_product.price.$touched">
+                                Giá sản phẩm phải là số
+                            </span>
+                            <label for="" class="text-danger" ng-model="err_price">{{err_price}}</label>
+                        </div>
+                    </div>
+                    <div class="mb-5 mt-5 row">
+                        <label for="inputCategoryName" class="col-sm-3 offset-1 col-form-label">Category
+                            Name</label>
+                        <div class="col-sm-5">
+                            <select class="form-select" name="category" ng-model="product.category" required>
+                                <option selected disabled>--Please choose an option--</option>
+                                <option ng-repeat="category in listCategory" value="{{category.id}}">
+                                    {{category.name}}
+                                </option>
+                            </select>
+                            <span class="text-danger"
+                                ng-show="add_product.category.$error.required && add_product.category.$touched">
+                                Danh mục sản phẩm không được để trống
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="mb-4 mt-5 row">
+                        <label for="inputImage" class="col-sm-3 offset-1 col-form-label">Image</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="image" ng-model="product.image" class="form-control"
+                                id="inputImage" required>
+                            <span class="text-danger"
+                                ng-show="add_product.image.$error.required && add_product.image.$touched">
+                                Hình ảnh sản phẩm không được để trống
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="button" ng-click="add($event)" class="btn btn-outline-success mb-4 me-2 ">
+                            Add Product
+                        </button>
+                        <button type="button" ng-click="update($event)" class="btn btn-outline-primary mb-4">
+                            Update
+                        </button>
+                    </div>
+                </form>
+
+                <table class="table mb-5 text-center">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Product name</th>
+                            <th>Price</th>
+                            <th>Category name</th>
+                            <th>Image</th>
+                            <th colspan="2" class="text-center">Function</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="product in listProduct|filter:{category:selectCategory}">
+                            <td> {{$index+1}}</td>
+                            <td> {{product.nameProduct|uppercase}}</td>
+                            <td> {{product.price}}</td>
+                            <td> {{product.category}}</td>
+                            <td>
+                                <img src="img/{{product.image}}" alt="" width="80" height="80">
+
+                            </td>
+                            <td>
+                                <button href="" class="btn btn-outline-primary"
+                                    ng-click="btnUpdateOnClick($event, $index)">Detail</button>
+                            </td>
+                            <td>
+                                <button href="" class="btn btn-outline-danger"
+                                    ng-click="btnDeleteOnClick($event, $index)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

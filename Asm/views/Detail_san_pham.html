@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="Trang_chu.css">
+    <link rel="stylesheet" href="Detail_san_pham.css">
+</head>
+
+<body ng-app="my_TrangChu">
+    <div class="container">
+
+        <div class="row">
+            <div class="container mt-5 mb-5">
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-md-6 border-end">
+                            <div class="d-flex flex-column justify-content-center">
+                                <div class="main_image"><img  src="img/{{products.image}}"
+                                        id="main_product_image" width="380" height="400"> 
+                                </div>
+                                <div class="thumbnail_images">
+                                    <ul id="thumbnail">
+                                        <li><img onclick="changeImage(this)" src="img/{{products.image}}"
+                                                width="70" height="70"></li>
+                                        <li><img onclick="changeImage(this)" src="img/image_product_4.png"
+                                                width="70" height="70"></li>
+                                        <li><img onclick="changeImage(this)" src="img/image_product_7.png"
+                                                width="70" height="70"></li>
+                                        <li><img onclick="changeImage(this)" src="img/image_product_9.png"
+                                                width="70" height="70"></li>
+                                        <li><img onclick="changeImage(this)" src="img/image_product_5.png"
+                                                width="70" height="70"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 right-side">
+                                <div class="me-5 ms-4">
+                                    <h1><b>
+                                        {{products.nameProduct}}
+                                    </b></h1>
+                                    <div class="row mt-5 mb-3">
+                                        <div class="col-sm-3 ">
+                                            <h5 class="mt-2"><b>Số lượng</b></h5>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="input-group mb-3">
+                                                <input ng-model="gioHang.quantity" type="number" class="form-control" min="1" value="1" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h1>{{products.price}} VNĐ</h1>
+                                        
+
+                                    <div class="text-center  add-cart">
+                                        <a href="" class="text-light nav-link" ng-click="addGioHang($event)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+                                                class="bi bi-cart" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                            </svg>
+                                            Thêm vào giỏ hàng
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3 class="text-center mt-5 mb-5"><b>Sản phẩm tương tự</b></h3>
+            
+            <div class="row mb-4">
+                <div class="col-md-3 col-12">
+                    <div class="card border-light text-center" style="width: 18rem;">
+                        <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                            <img src="img/image_product_9.png" class="card-img-top" alt="..." style="height: 285px;">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                            <h4 class="card-text"><b>$30.00</b></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12">
+                    <div class="card border-light text-center" style="width: 18rem;">
+                        <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                            <img src="img/image_product_2.png" class="card-img-top" alt="...">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                            <h4 class="card-text"><b>$30.00</b></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12">
+                    <div class="card border-light text-center " style="width: 18rem;">
+                        <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                            <img src="img/image_product_4.png" class="card-img-top" alt="...">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                            <h4 class="card-text"><b>$30.00</b></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12">
+                    <div class="card border-light text-center" style="width: 18rem;">
+                        <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                            <img src="img/image_product_7.png" class="card-img-top" alt="..." style="height: 285px;">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                            <h4 class="card-text"><b>$30.00</b></h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <!-- <div class="" style="background: #024137;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row text-light mb-4 mt-4">
+                        <h1><i>innisfree</i></h1>
+                    </div>
+                    <div class="row">
+                        <img src="img/image9.png" alt="" style="width: 215px; height: 65px;">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <img class="mt-5 mb-5 ms-4" src="img/image10.png" alt="" style="width: 210px; height: 98px;">
+                </div>
+            </div>
+            <div class="row">
+
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-light">
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" href="#">Chính sách giao hàng và thanh toán |</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" href="#">Chính sách bảo mật thông tin khách hàng
+                                        |</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-light" href="#">
+                                        Chính sách mua hàng |
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light">Chính sách trả hàng</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="pb-2 mt-4 text-light">
+                <p>Thời gian làm việc: Thứ 2 ~ Thứ 6 9:00 ~ 17:00 (Trừ Thứ 7, Chủ Nhạt và ngày lễ)</p>
+                <p>Tư vấn và chăm sóc khách hàng: 028 3627 9777 (Ext: 125)</p>
+                <p>Email: cs_vn@innisfree.com</p>
+            </div>
+
+            <div class="pb-4 mt-4 text-light">
+                <p>CÔNG TY TNHH AMOREPACIFIC VIỆT NAM</p>
+                <p>Giấy CNĐKDN: 0309984165 - Ngầy cấp: 05/05/2010, được sửa đổi lần thứ 21, ngày 04/04/2022</p>
+                <p>Cơ quan cấp: Phòng Đăng kí kinh doan - Sở Kế hoạch và Đầu tư TP.HCM</p>
+                <p>Địa chỉ đăng kí kinh doanh: Lầu 4A, Tòa nhà Vincom, 72 Lê Thánh Tôn, Phường Bến Nghé, Quận 1, Tp. Hồ
+                    Chí Minh, Việt Nam.</p>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+        function changeImage(element) {
+
+            var main_prodcut_image = document.getElementById('main_product_image');
+            main_prodcut_image.src = element.src;
+
+        }
+    </script>
+</body>
+
+</html>

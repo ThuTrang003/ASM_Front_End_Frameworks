@@ -1,0 +1,49 @@
+<section>
+    <div ng-controller="Doi_mat_khau">
+        <div class="container col-md-6 offset-3">
+            <h3 class="text-center mt-4 mb-2">Đổi mật khẩu</h3>
+            <hr>
+            <form action="" name="doiPassWord">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email </label>
+                    <input type="email" name="email" class="form-control" id="email" ng-model="email" required>
+                    <span class="text-danger" ng-show="doiPassWord.email.$error.required && doiPassWord.email.$touched">
+                        Email không được để trống
+                    </span>
+                    <span class="text-danger" ng-show="doiPassWord.email.$error.email && doiPassWord.email.$touched">
+                        Email phải đúng định dạng
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="oldPassword" class="form-label">Mật khẩu cũ</label>
+                    <input type="text" name="oldPassword" class="form-control" 
+                        id="oldPassword" ng-model="oldpassWord" required>
+                    <span class="text-danger" ng-show="doiPassWord.oldPassword.$error.required && doiPassWord.oldPassword.$touched">
+                        Mật khẩu cũ không được để trống
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="newPassword" class="form-label">Mật khẩu mới</label>
+                    <input type="text" name="newPassword" class="form-control" 
+                        id="newPassword" ng-model="newPassWord" required>
+                    <span class="text-danger" ng-show="doiPassWord.newPassword.$error.required && doiPassWord.newPassword.$touched">
+                        Mật khẩu mới không được để trống
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="newRePassword" class="form-label">Nhập lại khẩu mới</label>
+                    <input type="text" name="newRePassword" class="form-control" 
+                    id="newRePassword" ng-model="rePassWord" required>
+                    <span class="text-danger" ng-show="doiPassWord.newRePassword.$error.required && doiPassWord.newRePassword.$touched">
+                        Mật khẩu nhập lại không được để trống
+                    </span>
+                </div>
+
+                <button class="btn btn-outline-success mb-4 mt-2 offset-5" ng-click="updatUser($event)">
+                    <b>Đổi mật khẩu</b>
+                </button>
+            </form>
+            
+        </div>
+    </div>
+</section>

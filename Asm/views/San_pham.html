@@ -1,0 +1,210 @@
+<div ng-controller="San_pham">
+    <a href="" class="nav-link" href="#San_pham"><h3 class="text-center mt-5 mb-5"><b>Tất cả sản phẩm</b></h3></a>
+    <div class="row">
+        <div class="col-md-3 col-12">
+            <h4 class="mb-4">Danh mục sản phẩm</h4>
+            <div class="pt-4 mb-5 pb-5">
+                <h4 ng-click="loc()"><a href="" class="nav-link" ng-click="loc()">Tất cả</a></h4>
+            </div>
+            <div ng-repeat="category in listCategory">
+                <div class="pt-4 mb-5 pb-5">
+                    <h4><a href="" class="nav-link"  ng-click="loc(category.id)">{{category.name}}</a></h4>
+                </div>
+            </div>
+            <!-- <select class="form-select" name="category" ng-model="selectCategory" >
+                <option ng-repeat="category in listCategory" ng-value="category.id" value="{{category.id}}">
+                    {{category.name}}
+                </option>
+            </select> -->
+        </div>
+
+        <div class="col-md-9 col-12">
+            <div class="row mt-2 mb-5">
+                <div class="col-md-4" ng-repeat="product in listProduct|filter:{category:loai}">
+                    <a href="#San_pham/{{product.id}}" class="nav-link">
+                        <div class="card border-light text-center" style="width: 18rem;">
+                            <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                                <img src="img/{{product.image}}" class="card-img-top" alt="..." style="height: 285px;">
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="card-title mt-2 mb-2">{{product.nameProduct}}</h5>
+                                <h4 class="card-text"><b>${{product.price}}</b></h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- <div class="row mb-5">
+                        <div class="col-md-4">
+                            <div class="card border-light text-center" style="width: 18rem;">
+                                <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                                    <img src="img/image_product_5.png" class="card-img-top" alt="..."
+                                        style="height: 285px;">
+                                </div>
+    
+                                <div class="card-body">
+                                    <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                                    <h4 class="card-text"><b>$30.00</b></h4>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-4">
+                            <div class="card border-light text-center" style="width: 18rem;">
+                                <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                                    <img src="img/image_product_6.png" class="card-img-top" alt="...">
+                                </div>
+    
+                                <div class="card-body">
+                                    <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                                    <h4 class="card-text"><b>$30.00</b></h4>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-4">
+                            <div class="card border-light text-center" style="width: 18rem;">
+                                <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                                    <img src="img/image_product_7.png" class="card-img-top" alt="...">
+                                </div>
+    
+                                <div class="card-body">
+                                    <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                                    <h4 class="card-text"><b>$30.00</b></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row mb-5">
+                        <div class="col-md-4">
+                            <div class="card border-light text-center" style="width: 18rem;">
+                                <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                                    <img src="img/image_product_5.png" class="card-img-top" alt="..."
+                                        style="height: 285px;">
+                                </div>
+    
+                                <div class="card-body">
+                                    <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                                    <h4 class="card-text"><b>$30.00</b></h4>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-4">
+                            <div class="card border-light text-center" style="width: 18rem;">
+                                <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                                    <img src="img/image_product_6.png" class="card-img-top" alt="...">
+                                </div>
+    
+                                <div class="card-body">
+                                    <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                                    <h4 class="card-text"><b>$30.00</b></h4>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-4">
+                            <div class="card border-light text-center" style="width: 18rem;">
+                                <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                                    <img src="img/image_product_7.png" class="card-img-top" alt="...">
+                                </div>
+    
+                                <div class="card-body">
+                                    <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                                    <h4 class="card-text"><b>$30.00</b></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row mb-5">
+                        <div class="col-md-4">
+                            <div class="card border-light text-center" style="width: 18rem;">
+                                <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                                    <img src="img/image_product_1.png" class="card-img-top" alt="..."
+                                        style="height: 285px;">
+                                </div>
+    
+                                <div class="card-body">
+                                    <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                                    <h4 class="card-text"><b>$30.00</b></h4>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-4">
+                            <div class="card border-light text-center" style="width: 18rem;">
+                                <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                                    <img src="img/image_product_2.png" class="card-img-top" alt="...">
+                                </div>
+    
+                                <div class="card-body">
+                                    <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                                    <h4 class="card-text"><b>$30.00</b></h4>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-4">
+                            <div class="card border-light text-center" style="width: 18rem;">
+                                <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                                    <img src="img/image_product_4.png" class="card-img-top" alt="...">
+                                </div>
+    
+                                <div class="card-body">
+                                    <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                                    <h4 class="card-text"><b>$30.00</b></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row mb-5">
+                        <div class="col-md-4">
+                            <div class="card border-light text-center" style="width: 18rem;">
+                                <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                                    <img src="img/image_product_1.png" class="card-img-top" alt="..."
+                                        style="height: 285px;">
+                                </div>
+    
+                                <div class="card-body">
+                                    <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                                    <h4 class="card-text"><b>$30.00</b></h4>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-4">
+                            <div class="card border-light text-center" style="width: 18rem;">
+                                <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                                    <img src="img/image_product_2.png" class="card-img-top" alt="...">
+                                </div>
+    
+                                <div class="card-body">
+                                    <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                                    <h4 class="card-text"><b>$30.00</b></h4>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-4">
+                            <div class="card border-light text-center" style="width: 18rem;">
+                                <div class="me-1 ms-1 mb-2 bg-light" style="height: 285px;">
+                                    <img src="img/image_product_4.png" class="card-img-top" alt="...">
+                                </div>
+    
+                                <div class="card-body">
+                                    <h5 class="card-title mt-2 mb-2">Crab Pool Security</h5>
+                                    <h4 class="card-text"><b>$30.00</b></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+        </div>
+    </div>
+
+</div>

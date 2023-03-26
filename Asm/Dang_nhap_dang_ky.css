@@ -1,0 +1,45 @@
+.dang_nhap{
+    border-right: 1px solid #767676;
+}
+
+.btn_dang_nhap{
+    background-color: #144702;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.btn_dang_ky{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #024137;
+}
+
+.btn_dang_nhap a{
+    line-height: 90px;
+    font-size: 25px;
+    
+}
+
+.btn_dang_ky a{
+    line-height: 90px;
+    font-size: 25px;
+}
+
+.quen_mk a{
+    color: #024137;
+    font-size: 17px;
+    line-height: 27px;
+    border-bottom: 1px solid #024137;
+}
+
+.btn_sns {
+    border-radius: 0;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.note {
+    color: #767676;
+    font-size: 18px;
+}
